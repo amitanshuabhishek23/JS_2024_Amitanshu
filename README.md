@@ -12,3 +12,19 @@ git remote add origin https://github.com/amitanshuabhishek23/JS_2024_Amitanshu.g
 git push -u origin main
 
 ```
+
+**Variables** 
+
+```
+declare the variable 
+
+var is the keyword 
+
+var  firstname = "Amitanshu"
+
+
+
+
+
+
+```
