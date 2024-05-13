@@ -1,7 +1,6 @@
 # JS_2024_Amitanshu
 
-**To configure the remote repo in local 
-**
+**To configure the remote repo in local**
 
 ```
 echo "# JS_2024_Amitanshu" >> README.md
