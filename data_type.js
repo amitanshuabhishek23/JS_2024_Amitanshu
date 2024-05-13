@@ -112,12 +112,3 @@ console.log(num1!=num3); // false
 console.log(num1!==num3); // true  -- It checks the data type  
 console.log(num1!== num2); // true
 
-// TRUTHY AND FALSY VALUES 
-
-// --- FAlSY VALUES 
-
-// false 
-// " "
-// null 
-// undefined 
-// 0    
