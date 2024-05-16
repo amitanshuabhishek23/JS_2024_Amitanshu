@@ -61,7 +61,7 @@ for (i=0 ; i<fruits.length;i++)
 const fruit =["apple","banana"];  // heap memory add 0x11
 console.log(fruit);
 fruit.push("oragane")
-console.log(fruit); // WHY ??  
+console.log(fruit); // WHY ??   No address change was done as in stack memory still has the same ponter to the heap memory.
 
 // ARRAY FOR WHILE 
 
@@ -129,7 +129,7 @@ const myArray1 = ["value1" , "value2" , "value4" ];
 1
 
 let [ myvar11 , myvar21, ...myNweArray ] = myArray1; 
-// const [ myvar1 , myvar2 ] = myArray;  // const cant be changed 
+// const [ myvar1 , myvar2 ] = myArray;  // const value cant be changed 
 myvar1="value_changed"
 console.log(myvar11);
 console.log(myvar21);
