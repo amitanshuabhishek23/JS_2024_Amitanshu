@@ -212,17 +212,33 @@ printDetails(person23);
 
  mainFunction(neddToCAll); //Inside my neddToCAll
 
- //  FUNCTIONS RETURNING FUNCTIONS ------------------------------------// 
+ //  FUNCTIONS RETURNING FUNCTIONS ------------------------------------//  HIGHER ORDER FUNCTION 
 
  function myFunc1(){
     function hello(){
         console.log("Hello World")
+        return "From Return"
     }
 
-    return hello ; // Returning hello function 
+    return hello ; // Returning hello function  
  }
 
- const ans =  myFunc1(); 
+ const ans1 =  myFunc1(); 
 
- console.log(ans); 
- ans();
+ console.log(ans1); 
+ ans1();
+
+
+ function myFunc11(){
+    return function (){
+        return "Hello vvvWorld" ;
+         
+    } 
+
+   
+}
+
+ const ans21 =  myFunc11(); 
+
+console.log(ans21()); 
+ 
