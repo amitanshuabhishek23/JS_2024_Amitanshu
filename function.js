@@ -211,3 +211,18 @@ printDetails(person23);
  }
 
  mainFunction(neddToCAll); //Inside my neddToCAll
+
+ //  FUNCTIONS RETURNING FUNCTIONS ------------------------------------// 
+
+ function myFunc1(){
+    function hello(){
+        console.log("Hello World")
+    }
+
+    return hello ; // Returning hello function 
+ }
+
+ const ans =  myFunc1(); 
+
+ console.log(ans); 
+ ans();
