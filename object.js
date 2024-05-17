@@ -232,4 +232,4 @@ console.log(user1); // {userid: 1, firstName: 'Amitanshu', gender: 'male'}
 // console.log(firstName ,"::", gender ) //  Amitanshu :: female 
 
 const [{firstName:usernamefores,userid:fefe,gender} , {gender:rgrg} , {userid:id}] = user; // renaming 
-console.log(usernamefores,fefe , gender ,"::", rgrg , gender) // Amitanshu :: female == rename  
+console.log(usernamefores,fefe , gender ,"::", rgrg , gender) // Amitanshu :: female == rename   
