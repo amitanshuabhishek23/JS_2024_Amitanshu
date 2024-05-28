@@ -2,7 +2,7 @@ console.log("Hi Functions");
 
 // Function in JavaScript
 
-// -- Function Declaration ------------------------------------// 
+// -- Function Declaration ------------------------------------//
 function singHappyBirthday() {
   console.log("Happy Birthady To You..!!");
 }
@@ -56,7 +56,7 @@ function findTarget(array, target) {
 const myArray = [1, 2, 3, 4, 5, 6];
 findTarget(myArray, 3);
 
-// -- Function Expresssion ------------------------------------// 
+// -- Function Expresssion ------------------------------------//
 
 const HBD = function () {
   console.log("Happy Birthady To You..!!");
@@ -68,7 +68,7 @@ const HBD = function () {
 
 HBD();
 
-// -- arrow function ------------------------------------// 
+// -- arrow function ------------------------------------//
 
 const AHBD = () => {
   console.log("Arrow Happy Birthady To You..!!");
@@ -97,7 +97,7 @@ isEven1(3); // false
 const firstChart2 = (anyString) => console.log(anyString[0]); // One Parameter may not have braket ()
 firstChart2("Amitannsu");
 
-// Hoisting ------------------------------------// 
+// Hoisting ------------------------------------//
 
 // Can be done with function declartion
 
@@ -119,7 +119,7 @@ function app() {
 }
 app();
 
-//Lexical Scope ------------------------------------// 
+//Lexical Scope ------------------------------------//
 
 const myVar51 = "lexical_scope_value_myFunc";
 
@@ -150,95 +150,88 @@ function addTwoD(a, b) {
 }
 console.log(addTwoD(4));
 
-function addTwoDP(a, b=0) {
-    return a + b;
-  }
-  console.log(addTwoDP(4)); //4 
-
-  // Rest Parameters 
-
-  function myFuncR(a,b,...c) {
-    console.log(`a is ${a}`);
-    console.log(`b is ${b}`);
-    console.log(`c is `,c); // (6) [5, 6, 7, 8, 9, 2] // Array
-    console.log(`c is ${c}`); // c is 5,6,7,8,9,2  // String 
-  }
-
-  myFuncR(3,4,5,6,7,8,9,2)
-
-
-  function adAll(...a){
-    let sum =0; 
-        for (let i of a) { // of means value and in means index 
-            sum = sum + i;
-            i++  
-            }
- return  sum ;      
-    }
-
-    console.log(adAll(3,4,5,6,7,8,9,2)) 
-
-//PARAMETER DESTRUCTURING  ------------------------------------// 
-
-const person23 ={
-    firstName23: "Amitanshu " , 
-    gender:"male"
+function addTwoDP(a, b = 0) {
+  return a + b;
 }
+console.log(addTwoDP(4)); //4
+
+// Rest Parameters
+
+function myFuncR(a, b, ...c) {
+  console.log(`a is ${a}`);
+  console.log(`b is ${b}`);
+  console.log(`c is `, c); // (6) [5, 6, 7, 8, 9, 2] // Array
+  console.log(`c is ${c}`); // c is 5,6,7,8,9,2  // String
+}
+
+myFuncR(3, 4, 5, 6, 7, 8, 9, 2);
+
+function adAll(...a) {
+  let sum = 0;
+  for (let i of a) {
+    // of means value and in means index
+    sum = sum + i;
+    i++;
+  }
+  return sum;
+}
+
+console.log(adAll(3, 4, 5, 6, 7, 8, 9, 2));
+
+//PARAMETER DESTRUCTURING  ------------------------------------//
+
+const person23 = {
+  firstName23: "Amitanshu ",
+  gender: "male",
+};
 
 // function printDetails(obj){
 //     console.log(obj.firstName23)
 //     console.log(obj.gender)
 //}
 
-
-function printDetails({firstName23,gender,age}){
-    console.log(firstName23)
-    console.log(gender)
-    console.log(age) // undefined
+function printDetails({ firstName23, gender, age }) {
+  console.log(firstName23);
+  console.log(gender);
+  console.log(age); // undefined
 }
-printDetails(person23);  
+printDetails(person23);
 
-// CALLBACK FUNCTIONS ------------------------------------// 
+// CALLBACK FUNCTIONS ------------------------------------//
 
- function neddToCAll (){
-    console.log("Inside my neddToCAll") 
- }
-
- function mainFunction(callback)
-  {
-    console.log("Hi I am main function" , callback)
-    callback();
- }
-
- mainFunction(neddToCAll); //Inside my neddToCAll
-
- //  FUNCTIONS RETURNING FUNCTIONS ------------------------------------//  HIGHER ORDER FUNCTION 
-
- function myFunc1(){
-    function hello(){
-        console.log("Hello World")
-        return "From Return"
-    }
-
-    return hello ; // Returning hello function  
- }
-
- const ans1 =  myFunc1(); 
-
- console.log(ans1); 
- ans1();
-
-
- function myFunc11(){
-    return function (){
-        return "Hello vvvWorld" ;
-         
-    } 
-
-   
+function neddToCAll() {
+  console.log("Inside my neddToCAll");
 }
 
- const ans21 =  myFunc11(); 
+function mainFunction(callback) {
+  console.log("Hi I am main function", callback);
+  callback();
+}
 
-console.log(ans21()); 
- 
+mainFunction(neddToCAll); //Inside my neddToCAll
+
+//  FUNCTIONS RETURNING FUNCTIONS ------------------------------------//  HIGHER ORDER FUNCTION
+
+function myFunc1() {
+  function hello() {
+    console.log("Hello World");
+    return "From Return";
+  }
+
+  return hello; // Returning hello function
+}
+
+const ans1 = myFunc1();
+
+console.log(ans1);
+ans1();
+
+function myFunc11() {
+  return function () {
+    return "Hello vvvWorld";
+  };
+}
+
+const ans21 = myFunc11();
+
+console.log(ans21());

@@ -146,90 +146,85 @@ console.log(newObject); // {key1: 'valu19', key2: 'value3', key3: 'value3', key4
 const newObject3 = { ...obj22, ...obj21 };
 console.log(newObject3); // {key3: 'valu19', key4: 'value4', key1: 'value1', key2: 'value3'} valu19 as  obj21 was the last and latest
 
-const newObject1 = { ...obj21, ...obj22 , key69 : "value69"};
-console.log(newObject1); // {key1: 'value1', key2: 'value3', key3: 'value3', key4: 'value4', key69: 'value69'} 
+const newObject1 = { ...obj21, ...obj22, key69: "value69" };
+console.log(newObject1); // {key1: 'value1', key2: 'value3', key3: 'value3', key4: 'value4', key69: 'value69'}
 
-const newObject2 = {..."abc"}
+const newObject2 = { ..."abc" };
 console.log(newObject2); // {0: 'a', 1: 'b', 2: 'c'}
 console.log(newObject2[2]); // c
 console.log(newObject2[5]); // undefined
 
-const newObject4 = {...["item","item2"]} // Not used 
+const newObject4 = { ...["item", "item2"] }; // Not used
 console.log(newObject4); // {0: 'item', 1: 'item2'}
 
+// ARRAY DESTRUCTING
 
-// ARRAY DESTRUCTING 
-
-const myArray = ["value1" , "value2" , "value4" ]; 
+const myArray = ["value1", "value2", "value4"];
 // let myvar1 = myArray[0];
 // let myvar2 = myArray[1];
 
-
-let [ myvar1 , myvar2,myvar3 ] = myArray; 
-// const [ myvar1 , myvar2 ] = myArray;  // const cant be changed 
-myvar1="value_changed"
+let [myvar1, myvar2, myvar3] = myArray;
+// const [ myvar1 , myvar2 ] = myArray;  // const cant be changed
+myvar1 = "value_changed";
 console.log(myvar1);
 console.log(myvar2);
-console.log(myvar3);  // undefined
+console.log(myvar3); // undefined
 
-// OBJECT DESTRUCTING 
+// OBJECT DESTRUCTING
 
 const band = {
-    bandName : "123" ,
-    songName : "abc",
-    year : "1986"
+  bandName: "123",
+  songName: "abc",
+  year: "1986",
 };
 
 // const bandName = band.bandName;
-// const famousSong = band.songName; // use let to change the name for band not possible in const 
-// console.log(bandName , famousSong ) ;   
+// const famousSong = band.songName; // use let to change the name for band not possible in const
+// console.log(bandName , famousSong ) ;
 
-// SHORCUT 
+// SHORCUT
 
-let{bandName , songName,...restProps} = band;
-console.log(bandName , songName ) ;   // 123 abc 
-console.log(restProps) ; // {year: '1986'}
-
-
-
+let { bandName, songName, ...restProps } = band;
+console.log(bandName, songName); // 123 abc
+console.log(restProps); // {year: '1986'}
 
 const band1 = {
-    bandName1 : "123" ,
-    songName1 : "abc",
-    year : "1986"
+  bandName1: "123",
+  songName1: "abc",
+  year: "1986",
 };
 
-let{bandName1:key12 , songName1:key13} = band1;   // rename the key in object 
-console.log(key12 , key13 ) ;   // 123 abc 
+let { bandName1: key12, songName1: key13 } = band1; // rename the key in object
+console.log(key12, key13); // 123 abc
 
 // console.log(bandName1 , songName1 ) ; // object.js:202 Uncaught ReferenceError: bandName1 is not defined
 
+// OBJECT INSIDE ARRAY and IT IS USED IN REAL TIME APPLICATION
 
-// OBJECT INSIDE ARRAY and IT IS USED IN REAL TIME APPLICATION 
+const user = [
+  { userid: 1, firstName: "Amitanshu", gender: "male" },
+  { userid: 2, firstName: "Ankita", gender: "female" },
+  { userid: 3, firstName: "Abhishek", gender: "male" },
+  { userid: 4, firstName: "AA", gender: "male" },
+];
 
-const user =[
-
-    {userid:1,firstName:"Amitanshu",gender:"male"},
-    {userid:2,firstName:"Ankita",gender:"female"},
-    {userid:3,firstName:"Abhishek",gender:"male"},
-    {userid:4,firstName:"AA",gender:"male"}
-
-
-]
-
-console.log(user); // [{…}, {…}, {…}, {…} 
+console.log(user); // [{…}, {…}, {…}, {…}
 
 for (let users of user) {
-    console.log(users.firstName ,"::", users.gender )
-} 
+  console.log(users.firstName, "::", users.gender);
+}
 
-// NESTED DESTRUCTURING 
+// NESTED DESTRUCTURING
 
-const [user1 , user2 , user3] = user;
+const [user1, user2, user3] = user;
 console.log(user1); // {userid: 1, firstName: 'Amitanshu', gender: 'male'}
 
 // const [{firstName} , {gender} , {userid}] = user;
-// console.log(firstName ,"::", gender ) //  Amitanshu :: female 
+// console.log(firstName ,"::", gender ) //  Amitanshu :: female
 
-const [{firstName:usernamefores,userid:fefe,gender} , {gender:rgrg} , {userid:id}] = user; // renaming 
-console.log(usernamefores,fefe , gender ,"::", rgrg , gender) // Amitanshu :: female == rename   
+const [
+  { firstName: usernamefores, userid: fefe, gender },
+  { gender: rgrg },
+  { userid: id },
+] = user; // renaming
+console.log(usernamefores, fefe, gender, "::", rgrg, gender); // Amitanshu :: female == rename

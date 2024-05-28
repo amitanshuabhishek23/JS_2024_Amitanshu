@@ -211,11 +211,10 @@ console.log("4th Will NOT BE PRINTED");
 // DO WHILE LOOP
 console.log("DO WHILE LOOP");
 
-let i5=10;
-do{
-    console.log(i5);
-    i5++;
-}
-while(i5<9);
+let i5 = 10;
+do {
+  console.log(i5);
+  i5++;
+} while (i5 < 9);
 
-console.log(`Value of I is ${i5}`)
+console.log(`Value of I is ${i5}`);

@@ -63,13 +63,7 @@ for (let item of numbers1) {
   console.log(item);
 }
 
-const myArray = [
-  1,
-  2,
-  3,
-  3,
-  78
-];
+const myArray = [1, 2, 3, 3, 78];
 
 const uniqueElements = new Set(myArray);
 console.log(uniqueElements);
@@ -79,32 +73,28 @@ for (let element of uniqueElements) {
   length++;
 }
 
-console.log(length); 
+console.log(length);
 
+const person1 = {
+  firstname: "Amitanshu",
+  1: "one",
+};
 
-const person1 ={
-
-    firstname : "Amitanshu",
-    1 : "one"
-}
-
-console.log(person1.firstname)
-console.log(person1.Age)
-console.log(person1[0]) // Undefined
-console.log(person1 [firstname]) // Undefined
-console.log(person1 ['firstname'])
-console.log(person1) 
-console.log(typeof person1['1'])  
-
-
+console.log(person1.firstname);
+console.log(person1.Age);
+console.log(person1[0]); // Undefined
+console.log(person1[firstname]); // Undefined
+console.log(person1["firstname"]);
+console.log(person1);
+console.log(typeof person1["1"]);
 
 // --  Object  Literal
 // -- key -- > String
 // -- key -- > Symbol
 
-//  --------------------------   MAP   -------------------------- // 
+//  --------------------------   MAP   -------------------------- //
 
-// Stores key value pair same as object  
+// Stores key value pair same as object
 // In o
 
 const person = new Map();
@@ -113,83 +103,76 @@ console.log(person); // Map(0) {size: 0}
 person.set("firstName", "Amitanshu");
 person.set("Age", 23);
 person.set(1, "One");
-person.set([1,2,3], "OneTwoThree");
-person.set({1 :"Amitanshu"}, "OneTwoThree");
-// console.log(person);  
+person.set([1, 2, 3], "OneTwoThree");
+person.set({ 1: "Amitanshu" }, "OneTwoThree");
+// console.log(person);
 // console.log(person[0]) // Undefined
-// console.log(person [firstname]) // Undefined 
-
+// console.log(person [firstname]) // Undefined
 
 // console.log(person.get(1)) // One -- String
 // console.log(person.get("Age")) //23
-// console.log(person.get('firstName')) // Amitanshu  
+// console.log(person.get('firstName')) // Amitanshu
 
-
-for (let key of person.keys())
-{
-    console.log(key, typeof key) // 1 'number' 
+for (let key of person.keys()) {
+  console.log(key, typeof key); // 1 'number'
 }
 
-for (let [key , value] of person)
-    {
-        console.log(Array.isArray(key)) // 1 'number'  // true
-        console.log(key,value)
+for (let [key, value] of person) {
+  console.log(Array.isArray(key)); // 1 'number'  // true
+  console.log(key, value);
+}
 
+const newPerson = new Map([
+  ["fristName", "Amitanshu"],
+  ["age", 23],
+]);
+console.log(newPerson);
 
-    }
+const person2 = {
+  id: 1,
+  firstname: "Amitanshu",
+};
 
-    const newPerson = new Map ( [['fristName' , 'Amitanshu'] , ['age' , 23]])
-    console.log(newPerson) 
+// I want to add the diff key value pair in the person2 using Map
 
+const userInfo = new Map();
 
-   const person2 = {
+userInfo.set(person2, { age: 8, gender: "male" });
 
-    id : 1 , 
-    firstname: "Amitanshu"
+console.log(person2);
+console.log(userInfo);
 
-   } 
+console.log(person2.id);
+console.log(userInfo.get(person2).age); // 8
 
-   // I want to add the diff key value pair in the person2 using Map 
+// -- Cloning the Object.assign
 
-   const userInfo = new Map() ; 
+const obj = {
+  key1: "Value1",
+  key2: "Value2",
+};
 
-   userInfo.set(person2, {age:8 , gender:"male"}); 
+const obj2 = obj; // Same address in heap memory
 
-   console.log(person2) 
-   console.log(userInfo) 
+const obj3 = { ...obj }; // Diff address
 
-   console.log(person2.id); 
-   console.log(userInfo.get(person2).age);  // 8 
-
-   // -- Cloning the Object.assign 
-
-   const obj = {
-    key1: "Value1",
-    key2: "Value2"
-   }
-
-   const obj2 =obj; // Same address in heap memory 
-
-const obj3 = {... obj} ; // Diff address 
-
-const obj4 = Object.assign({},obj); // Same as spread opreator
+const obj4 = Object.assign({}, obj); // Same as spread opreator
 
 // --------------OPTIONAL CHAINING--------------
 
- const user = {
-  firstname : "Amitanshu", 
+const user = {
+  firstname: "Amitanshu",
   // add : {flatNo : 403}
- }
+};
 
 console.log(user.firstname); // Amitanshu
-// console.log(user.add.flatNo); // 403 
+// console.log(user.add.flatNo); // 403
 
-console.log(user?.add); // Undefined 
+console.log(user?.add); // Undefined
 
 // console.log(user.add.flatNo); // TypeError: Cannot read properties of undefined (reading 'flatNo')
- console.log(user?.add?.flatNo)
+console.log(user?.add?.flatNo);
 
-// We use ? incase if the property is not available in the object or incase object is 
-// not available or is declared using let like let user ; in that case it will throw undefined as it will not 
-// stop the exceution. 
-
+// We use ? incase if the property is not available in the object or incase object is
+// not available or is declared using let like let user ; in that case it will throw undefined as it will not
+// stop the exceution.

@@ -204,10 +204,16 @@ const deletediteam = num2s.splice(1, 1); // index  [1, 3, 4, 5, 6, 7, 6]
 console.log(deletediteam); // [2]
 console.log(num2s);
 num2s.splice(1, 0, "inserted");
-console.log(num2s); // [1, 'inserted', 3, 4, 5, 6, 7, 6] 
+console.log(num2s); // [1, 'inserted', 3, 4, 5, 6, 7, 6]
 
-// Insert and Delete 
+// Insert and Delete
 
-const deletediteam1 = num2s.splice(1, 3, "inserted_1" ,"inserted_2" , "inserted_3" );
-console.log(deletediteam1); //  ['inserted', 3, 4] 
-console.log(num2s) // [1, 'inserted_1', 'inserted_2', 'inserted_3', 5, 6, 7, 6]
+const deletediteam1 = num2s.splice(
+  1,
+  3,
+  "inserted_1",
+  "inserted_2",
+  "inserted_3"
+);
+console.log(deletediteam1); //  ['inserted', 3, 4]
+console.log(num2s); // [1, 'inserted_1', 'inserted_2', 'inserted_3', 5, 6, 7, 6]
