@@ -107,3 +107,6 @@ console.log(myfunc2); //(hobby, fav) {
 // ); }
 
 // -----------------ARROW FUNCTIONS------------------//
+// This won't work same in arrow function. It picks n-1 objects. 
+
+
